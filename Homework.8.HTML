@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Weather App Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            /* Use background-color to set the main page colour */
+            background-color: #e0f2fe;
+
+            /* Use background-image to add a visual pattern or gradient background */
+            background-image: url('https://www.transparenttextures.com/patterns/clouds.png');
+
+            /* Apply background-repeat to control whether background pattern repeats */
+            background-repeat: repeat;
+
+            /* Use background-position to decide where the background begins */
+            background-position: top left;
+
+            /* Apply background-attachment to create a fixed scrolling background effect */
+            background-attachment: fixed;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        /* Create a linear-gradient for the main weather card */
+        .main-weather-card {
+            width: 350px;
+            padding: 30px;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            margin-bottom: 30px;
+        }
+
+        /* Create a radial-gradient for the forecast section and sky pattern block */
+        .forecast-section {
+            width: 500px;
+            padding: 25px;
+            border-radius: 15px;
+            color: #1e293b;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            background: radial-gradient(circle at center, #ffffff, #f1f5f9);
+            text-align: center;
+        }
+
+        /* Build a simple CSS animation using animation and @keyframes */
+        .floating-weather-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #fef08a;
+            border-radius: 50%;
+            margin: 20px auto;
+            box-shadow: 0 0 20px #fde047;
+
+            /* Attaching the custom animation configuration */
+            animation: floatAnimation 3s ease-in-out infinite;
+        }
+
+        /* Define keyframes for the simple floating effect animation */
+        @keyframes floatAnimation {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-weather-card">
+        <h1>Austin, Texas</h1>
+        <div class="floating-weather-icon"></div>
+        <p style="font-size: 48px; font-weight: bold; margin: 10px 0;">78°F</p>
+        <p>Condition: Clear Sunny Sky</p>
+    </div>
+
+    <div class="forecast-section">
+        <h2>Weekly Sky Forecast</h2>
+        <p>Stable high pressure conditions expected throughout the remainder of the week.</p>
+    </div>
+
+</body>
+
+</html>
