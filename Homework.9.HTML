@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Restaurant Menu Card</title>
+    <style>
+        body {
+            background-color: #fdfbf7;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu-container {
+            background-color: #ffffff;
+            border: 2px solid #e7e3d4;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        /* Use typography properties such as font-family, font-size, font-weight, font-style, and letter-spacing */
+        .restaurant-name {
+            font-family: 'Georgia', serif;
+            font-size: 36px;
+            font-weight: 900;
+            font-style: normal;
+            letter-spacing: 2px;
+            color: #2c1a04;
+            text-align: center;
+            margin-bottom: 5px;
+
+            /* Add text-shadow to make headings stand out */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .tagline {
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 1px;
+            color: #7c6e5c;
+            text-align: center;
+            margin-bottom: 30px;
+
+            /* Use text-transform to change text into uppercase or capitalized text */
+            text-transform: uppercase;
+        }
+
+        .menu-section-heading {
+            font-family: 'Georgia', serif;
+            font-size: 22px;
+            color: #8c2f1e;
+            margin-top: 20px;
+            margin-bottom: 15px;
+
+            /* Apply text decoration to underline or overline important text */
+            text-decoration: underline double #8c2f1e;
+        }
+
+        .dish-name {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 4px;
+        }
+
+        /* Apply text-indent to indent the first line of dish descriptions */
+        .dish-description {
+            font-family: 'Georgia', serif;
+            font-size: 14px;
+            color: #555555;
+            text-indent: 20px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        /* Use box-shadow to create glowing or raised card effects for banners */
+        .offer-banner {
+            background-color: #8c2f1e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            border-radius: 6px;
+
+            box-shadow: 0 8px 16px rgba(140, 47, 30, 0.3);
+
+            /* Apply transform effects such as scale and rotate */
+            transform: scale(1.02) rotate(-1deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu-container">
+        <h1 class="restaurant-name">Le Petit Bistro</h1>
+        <p class="tagline">Authentic Culinary Masterpieces</p>
+
+        <h2 class="menu-section-heading">Main Course Entrées</h2>
+
+        <div class="dish-item">
+            <p class="dish-name">Truffle Mushroom Risotto</p>
+            <p class="dish-description">An Italian classic premium arborio rice gently folded with wild forest
+                mushrooms, fresh seasonal herbs, aged parmesan cheese shavings, and premium cold-pressed white truffle
+                oils infusion details.</p>
+        </div>
+
+        <div class="dish-item">
+            <p class="dish-name">Herb-Crusted Salmon</p>
+            <p class="dish-description">Atlantic caught fresh salmon pan-seared and encrusted with rosemary dill crumbs,
+                served alongside garlic roasted asparagus stalks and zesty lemon cream reducción.</p>
+        </div>
+
+        <div class="offer-banner">
+            WEEKEND SPECIAL: 20% OFF ALL DESSERTS!
+        </div>
+    </div>
+
+</body>
+
+</html>
