@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Methods and Loops</h1>
+    <p>Using built-in JavaScript methods and loop concepts</p>
+
+    <h3>1. A Random Set of Numbers (Loop)</h3>
+    <p id="loopOutput"></p>
+
+    <h3>2. Current Date and Time</h3>
+    <p id="dateOutput"></p>
+
+    <h3>3. Rounded Random Number</h3>
+    <p id="roundOutput"></p>
+
+    <script>
+        // TASK 1: Print a random set of numbers using a loop
+        var numbersList = "";
+        for (var i = 0; i < 5; i++) {
+            // Generates a random number between 0 and 100, then drops the decimals
+            var randomItem = Math.floor(Math.random() * 100);
+            numbersList += randomItem + " | ";
+        }
+        document.getElementById("loopOutput").innerHTML = numbersList;
+
+
+        // TASK 2: Get and display the current date
+        var currentDate = new Date();
+        document.getElementById("dateOutput").innerHTML = "Today is: " + currentDate.toDateString();
+
+
+        // TASK 3: Generate a single, rounded random number (between 1 and 10)
+        var preciseNumber = Math.random() * 10; // e.g., 7.342
+        var roundedNumber = Math.round(preciseNumber); // Rounds it to the nearest whole number (e.g., 7)
+
+        document.getElementById("roundOutput").innerHTML =
+            "Original: " + preciseNumber + "<br>Rounded: " + roundedNumber;
+    </script>
+
+</body>
+
+</html>
