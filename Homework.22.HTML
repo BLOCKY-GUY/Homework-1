@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Sum of Arguments & Trigonometry</h1>
+    <p>Using the arguments object and Math methods in JavaScript</p>
+
+    <h3>1. Sum of Arguments</h3>
+    <p id="sumOutput"></p>
+
+    <h3>2. Trigonometric Degrees</h3>
+    <p id="trigOutput"></p>
+
+    <script>
+        // TASK 1: Create a function that sums all arguments passed to it
+        function sumAll() {
+            var total = 0;
+            // The 'arguments' object is a built-in array-like list of everything passed into the function
+            for (var i = 0; i < arguments.length; i++) {
+                total += arguments[i];
+            }
+            return total;
+        }
+
+        // Call the function with any amount of numbers
+        var calculatedSum = sumAll(10, 20, 30, 40);
+        document.getElementById("sumOutput").innerHTML = "The total sum of arguments is: " + calculatedSum;
+
+
+        // TASK 2: Print the value of a trigonometric degree (e.g., Sin of 45 degrees)
+        var degrees = 45;
+
+        // Convert degrees to radians so JavaScript's Math object understands it
+        var radians = degrees * (Math.PI / 180);
+
+        // Calculate the sine value
+        var sinValue = Math.sin(radians);
+
+        document.getElementById("trigOutput").innerHTML =
+            "The value of Sin(" + degrees + "°) is: " + sinValue.toFixed(4); // .toFixed(4) rounds it nicely
+    </script>
+
+</body>
+
+</html>
