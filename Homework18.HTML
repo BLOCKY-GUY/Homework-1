@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Jungle Explorer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Gives sections enough height so Scrollspy has room to work */
+        .scroll-section {
+            padding: 100px 0;
+            min-height: 80vh;
+        }
+
+        #home {
+            bg-color: #e8f5e9;
+        }
+
+        /* Light jungle green */
+        #about {
+            bg-color: #c8e6c9;
+        }
+
+        /* Medium jungle green */
+        #contact {
+            bg-color: #a5d6a7;
+        }
+
+        /* Darker jungle green */
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#jungleNavbar" data-bs-offset="50" tabindex="0">
+
+    <nav id="jungleNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">🌴 Jungle Explorer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="scroll-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Welcome to the Jungle</h2>
+
+            <div id="jungleCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#jungleCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#jungleCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#jungleCarousel" data-bs-slide-to="2"></button>
+                </div>
+
+                <div class="carousel-inner text-white rounded shadow">
+                    <div class="carousel-item active" style="background: #2e7d32; height: 400px;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Dense Rainforests</h5>
+                            <p>Explore the deep canopy and unique ecosystems.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="background: #1b5e20; height: 400px;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Exotic Wildlife</h5>
+                            <p>Meet the majestic creatures that call the jungle home.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="background: #33691e; height: 400px;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Hidden Rivers</h5>
+                            <p>Navigate through the winding, mysterious waters.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#jungleCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#jungleCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="scroll-section" style="background-color: #e8f5e9;">
+        <div class="container">
+            <h2>About the Expedition</h2>
+            <p>This page highlights the beauty and mysteries of uncharted jungles. Use the navigation links at the top
+                or simply scroll down to see the navbar highlight the sections automatically!</p>
+        </div>
+    </section>
+
+    <section id="contact" class="scroll-section" style="background-color: #c8e6c9;">
+        <div class="container">
+            <h2>Join the Exploration</h2>
+            <p>Ready to pack your bags? Contact our team of wilderness guides today to start your journey.</p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
