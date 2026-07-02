@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Multiplication Using Functions</h1>
+    <p>Perform multiplication operations using functions and parameters</p>
+
+    <p id="calc1"></p>
+    <p id="calc2"></p>
+
+    <script>
+        // 1. Define the multiplication function with a default parameter
+        // If num2 is not passed (undefined), it will automatically become 1
+        function multiplyNumbers(num1, num2 = 1) {
+            return num1 * num2;
+        }
+
+        // 2. Call the function normally with two values
+        var result1 = multiplyNumbers(5, 4); // 5 * 4 = 20
+
+        // 3. Call the function with ONE value missing (undefined)
+        // Because we set num2 = 1 above, it will do 8 * 1 instead of crashing!
+        var result2 = multiplyNumbers(8); // 8 * 1 = 8
+
+        // 4. Display the results in your HTML elements
+        document.getElementById("calc1").innerHTML = "Multiplication with both numbers: " + result1;
+        document.getElementById("calc2").innerHTML = "Multiplication with an undefined number: " + result2;
+    </script>
+
+</body>
+
+</html>
