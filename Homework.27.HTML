@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Daily Task Organizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #d1fae5;
+            color: #065f46;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            margin: 0 0 8px 0;
+            color: #111827;
+        }
+
+        p.subtitle {
+            color: #6b7280;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <span class="badge">Reviewed Project</span>
+        <h1>My Daily Task Organizer</h1>
+        <p class="subtitle">Array sorting and mapping in JavaScript</p>
+
+        <ul id="task-list">
+        </ul>
+    </div>
+
+    <script>
+        // 1. Initial task data
+        const rawTasks = [
+            { name: "Workout", time: 45 },
+            { name: "Breakfast", time: 15 },
+            { name: "Study JavaScript", time: 60 },
+            { name: "Email Client", time: 30 }
+        ];
+
+        // 2. Perform Array Operations
+
+        // Step A: Sort task names alphabetically
+        const alphabeticalTasks = [...rawTasks].sort((a, b) =>
+            a.name.localeCompare(b.name)
+        );
+
+        // Step B: Reverse the list order
+        const reversedTasks = [...alphabeticalTasks].reverse();
+
+        // Step C: Sort task times numerically (ascending order)
+        const sortedByTime = [...rawTasks].sort((a, b) => a.time - b.time);
+
+        // Step D: Add labels to time values using .map()
+        const finalFormattedList = sortedByTime.map(task => {
+            return {
+                name: task.name,
+                formattedTime: `${task.time} mins` // Adds label to time value
+            };
+        });
+
+        // 3. Render items to the HTML DOM
+        const listElement = document.getElementById("task-list");
+
+        finalFormattedList.forEach(task => {
+            // Create list item tag
+            const li = document.createElement("li");
+
+            // Populate with task details
+            li.innerHTML = `
+        <strong>${task.name}</strong> 
+        <span>${task.formattedTime}</span>
+      `;
+
+            // Append to list container
+            listElement.appendChild(li);
+        });
+    </script>
+
+</body>
+
+</html>
