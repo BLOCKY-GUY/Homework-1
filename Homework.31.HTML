@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Perimeter Calculator</title>
+</head>
+
+<body>
+
+    <script>
+        // Automatically start asking questions as soon as the page loads
+        window.onload = function () {
+            // 1. Welcome and Ask for Shape
+            let shapeChoice = prompt(
+                "Welcome to the Perimeter Calculator!\n\n" +
+                "Which shape would you like to calculate?\n" +
+                "Type one: square, rectangle, triangle, or circle"
+            );
+
+            // Handle Cancel button or empty input
+            if (!shapeChoice) {
+                alert("Calculator canceled.");
+                return;
+            }
+
+            // Convert input to lowercase to handle any capitalization
+            shapeChoice = shapeChoice.toLowerCase().trim();
+
+            // 2. Handle Square
+            if (shapeChoice === "square") {
+                let side = prompt("Enter the side length of the square:");
+                side = parseFloat(side);
+
+                if (isNaN(side) || side <= 0) {
+                    alert("Invalid input! Please enter a valid number greater than 0.");
+                } else {
+                    let perimeter = 4 * side;
+                    alert("The perimeter of the Square is: " + perimeter.toFixed(2));
+                }
+            }
+
+            // 3. Handle Rectangle
+            else if (shapeChoice === "rectangle") {
+                let length = parseFloat(prompt("Enter the length of the rectangle:"));
+                let width = parseFloat(prompt("Enter the width of the rectangle:"));
+
+                if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+                    alert("Invalid input! Please enter valid numbers greater than 0.");
+                } else {
+                    let perimeter = 2 * (length + width);
+                    alert("The perimeter of the Rectangle is: " + perimeter.toFixed(2));
+                }
+            }
+
+            // 4. Handle Triangle
+            else if (shapeChoice === "triangle") {
+                let sideA = parseFloat(prompt("Enter length of Side A:"));
+                let sideB = parseFloat(prompt("Enter length of Side B:"));
+                let sideC = parseFloat(prompt("Enter length of Side C:"));
+
+                if (isNaN(sideA) || isNaN(sideB) || isNaN(sideC) || sideA <= 0 || sideB <= 0 || sideC <= 0) {
+                    alert("Invalid input! Please enter valid numbers for all sides.");
+                } else {
+                    let perimeter = sideA + sideB + sideC;
+                    alert("The perimeter of the Triangle is: " + perimeter.toFixed(2));
+                }
+            }
+
+            // 5. Handle Circle
+            else if (shapeChoice === "circle") {
+                let radius = parseFloat(prompt("Enter the radius of the circle:"));
+
+                if (isNaN(radius) || radius <= 0) {
+                    alert("Invalid input! Please enter a valid radius greater than 0.");
+                } else {
+                    let circumference = 2 * Math.PI * radius;
+                    alert("The circumference (perimeter) of the Circle is: " + circumference.toFixed(2));
+                }
+            }
+
+            // 6. Handle Invalid Shape Name
+            else {
+                alert("Unrecognized shape! Please refresh and type: square, rectangle, triangle, or circle.");
+            }
+        };
+    </script>
+
+</body>
+
+</html>
