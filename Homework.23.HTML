@@ -16,28 +16,21 @@
     <p id="arrayMethodsOutput"></p>
 
     <script>
-        // TASK 1: Create an object with key-value pairs
         var explorer = {
             name: "Alex",
             role: "Jungle Guide",
             experience: "5 years"
         };
-        // Display a value using its key (explorer.role)
         document.getElementById("objectOutput").innerHTML =
             "Explorer Role: " + explorer.role;
 
 
-        // TASK 2: Create an array and access an item by its index
         var tools = ["Compass", "Machete", "Flashlight", "Map"];
-        // Accessing the first item (Index 0)
+        
         document.getElementById("arrayIndexOutput").innerHTML =
             "Primary Tool (Index 0): " + tools[0];
-
-
-        // TASK 3: Use .join() and .pop() on the array
         var initialList = "Original Tools: " + tools.join(" - "); // Combines items with a " - " separator
 
-        // .pop() removes the very last item ("Map") and returns it
         var removedItem = tools.pop();
 
         var updatedList = "Remaining Tools: " + tools.join(" - ");

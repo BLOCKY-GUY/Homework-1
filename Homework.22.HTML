@@ -13,28 +13,22 @@
     <p id="trigOutput"></p>
 
     <script>
-        // TASK 1: Create a function that sums all arguments passed to it
         function sumAll() {
             var total = 0;
-            // The 'arguments' object is a built-in array-like list of everything passed into the function
             for (var i = 0; i < arguments.length; i++) {
                 total += arguments[i];
             }
             return total;
         }
 
-        // Call the function with any amount of numbers
         var calculatedSum = sumAll(10, 20, 30, 40);
         document.getElementById("sumOutput").innerHTML = "The total sum of arguments is: " + calculatedSum;
 
 
-        // TASK 2: Print the value of a trigonometric degree (e.g., Sin of 45 degrees)
         var degrees = 45;
 
-        // Convert degrees to radians so JavaScript's Math object understands it
         var radians = degrees * (Math.PI / 180);
 
-        // Calculate the sine value
         var sinValue = Math.sin(radians);
 
         document.getElementById("trigOutput").innerHTML =

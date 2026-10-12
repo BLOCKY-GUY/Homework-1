@@ -16,22 +16,18 @@
     <p id="roundOutput"></p>
 
     <script>
-        // TASK 1: Print a random set of numbers using a loop
         var numbersList = "";
         for (var i = 0; i < 5; i++) {
-            // Generates a random number between 0 and 100, then drops the decimals
             var randomItem = Math.floor(Math.random() * 100);
             numbersList += randomItem + " | ";
         }
         document.getElementById("loopOutput").innerHTML = numbersList;
 
 
-        // TASK 2: Get and display the current date
         var currentDate = new Date();
         document.getElementById("dateOutput").innerHTML = "Today is: " + currentDate.toDateString();
 
 
-        // TASK 3: Generate a single, rounded random number (between 1 and 10)
         var preciseNumber = Math.random() * 10; // e.g., 7.342
         var roundedNumber = Math.round(preciseNumber); // Rounds it to the nearest whole number (e.g., 7)
 
