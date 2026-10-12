@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calendar-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 280px;
+        }
+
+        #day {
+            font-size: 24px;
+            color: #ff5722;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #date {
+            font-size: 64px;
+            color: #333333;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .month-year {
+            font-size: 20px;
+            color: #777777;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calendar-card">
+        <div id="day">Day</div>
+        <div id="date">00</div>
+        <div class="month-year">
+            <span id="month">Month</span>, <span id="year">2026</span>
+        </div>
+    </div>
+
+    <script>
+        const today = new Date();
+
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        document.getElementById("day").textContent = days[today.getDay()];
+        document.getElementById("date").textContent = today.getDate();
+        document.getElementById("month").textContent = months[today.getMonth()];
+        document.getElementById("year").textContent = today.getFullYear();
+    </script>
+</body>
+
+</html>
