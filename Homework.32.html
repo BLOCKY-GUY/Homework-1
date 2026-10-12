@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Random Colours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.5s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-indigo-600 min-h-screen flex flex-col items-center justify-center text-white px-4">
+
+    <div
+        class="bg-white/10 backdrop-blur-md border border-white/20 p-8 sm:p-12 rounded-3xl shadow-2xl text-center max-w-md w-full">
+
+        <div class="text-6xl mb-4 animate-bounce">🎨</div>
+
+        <h1 class="text-3xl sm:text-4xl font-bold mb-2 tracking-wide">Color Changer</h1>
+        <p class="text-white/80 mb-6 text-sm sm:text-base">Click the button below to change the screen background to a
+            vibrant random color!</p>
+
+        <div class="bg-black/20 rounded-2xl p-4 mb-6 border border-white/10">
+            <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Current Color</p>
+            <span id="colorCode" class="text-xl sm:text-2xl font-mono font-bold tracking-wider">#4F46E5</span>
+        </div>
+
+        <button id="colorBtn"
+            class="w-full bg-white text-indigo-700 hover:bg-indigo-50 font-bold py-4 px-6 rounded-2xl shadow-lg transform active:scale-95 transition-all duration-200 text-lg flex items-center justify-center gap-2 cursor-pointer">
+            <span>✨ Change Color</span>
+        </button>
+
+    </div>
+
+    <footer class="mt-8 text-xs text-white/60">
+        JavaScript Project Task &bull; Change Random Colours
+    </footer>
+
+    <script>
+        const colorBtn = document.getElementById('colorBtn');
+        const colorCodeSpan = document.getElementById('colorCode');
+        const bodyElement = document.body;
+
+        function getRandomHexColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        colorBtn.addEventListener('click', function () {
+            const randomColor = getRandomHexColor();
+
+            bodyElement.style.backgroundColor = randomColor;
+
+            colorCodeSpan.textContent = randomColor;
+        });
+    </script>
+
+</body>
+
+</html>
